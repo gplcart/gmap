@@ -3,7 +3,9 @@
 
 Google Map is a simple [GPL Cart](https://github.com/gplcart/gplcart) module that offers convenient method to display Google Maps on your site. All you need is just add to your map container `data-gmap` attribute with the map settings:
 
-    <div style="height: 200px; width: 200px;" data-gmap='{"center": {"lat": -34.397, "lng": 150.644},"zoom": 8}'></div>
+    <div data-gmap='{"center": {"lat": -34.397, "lng": 150.644},"zoom": 8}'>
+    // Map
+    </div>
 
 **Installation**
 
