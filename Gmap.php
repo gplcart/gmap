@@ -26,24 +26,6 @@ class Gmap extends Module
     }
 
     /**
-     * Module info
-     * @return array
-     */
-    public function info()
-    {
-        return array(
-            'name' => 'Google Map',
-            'version' => '1.0.0-dev',
-            'description' => 'Allows to display Google Maps',
-            'author' => 'Iurii Makukh ',
-            'core' => '1.x',
-            'license' => 'GPL-3.0+',
-            'configure' => 'admin/module/settings/gmap',
-            'settings' => array('key' => '')
-        );
-    }
-
-    /**
      * Implements hook "route.list"
      * @param array $routes
      */
