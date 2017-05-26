@@ -13,7 +13,7 @@
       <div class="form-group">
         <label class="col-md-2 control-label"><?php echo $this->text('Key'); ?></label>
         <div class="col-md-6">
-          <input name="settings[key]" class="form-control" value="<?php echo $this->escape($settings['key']); ?>">
+          <input name="settings[key]" class="form-control" value="<?php echo $this->e($settings['key']); ?>">
           <div class="help-block"><?php echo $this->text('A key from <a href="@url">Google API Console</a>', array('@url' => 'https://developers.google.com/maps/documentation/javascript/get-api-key')); ?></div>
         </div>
       </div>
