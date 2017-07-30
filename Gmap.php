@@ -31,7 +31,6 @@ class Gmap extends Module
      */
     public function hookRouteList(array &$routes)
     {
-        // Module settings page
         $routes['admin/module/settings/gmap'] = array(
             'access' => 'module_edit',
             'handlers' => array(
