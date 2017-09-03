@@ -11,7 +11,7 @@
 
         var url, containers = $('[data-map]');
 
-        if (GplCart.settings.gmap.key && containers.length) {
+        if (GplCart.settings.gmap && GplCart.settings.gmap.key && containers.length) {
 
             if (isLoadedApi()) {
                 loadMaps(containers);
