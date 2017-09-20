@@ -1,5 +1,5 @@
-/* global GplCart, jQuery, window, google */
-(function (window, GplCart, $) {
+/* global Gplcart, jQuery, window, google */
+(function (window, Gplcart, $) {
 
     "use strict";
 
@@ -7,16 +7,16 @@
      * Draw maps on the page
      * @returns {undefined}
      */
-    GplCart.onload.drawMaps = function () {
+    Gplcart.onload.drawMaps = function () {
 
         var url, containers = $('[data-map]');
 
-        if (GplCart.settings.gmap && GplCart.settings.gmap.key && containers.length) {
+        if (Gplcart.settings.gmap && Gplcart.settings.gmap.key && containers.length) {
 
             if (isLoadedApi()) {
                 loadMaps(containers);
             } else {
-                url = 'https://maps.googleapis.com/maps/api/js?key=' + GplCart.settings.gmap.key;
+                url = 'https://maps.googleapis.com/maps/api/js?key=' + Gplcart.settings.gmap.key;
                 $.getScript(url, function () {
                     if (isLoadedApi()) {
                         loadMaps(containers);
@@ -49,4 +49,4 @@
         return (typeof window.google === 'object' && typeof window.google.maps === 'object');
     };
 
-})(window, GplCart, jQuery);
+})(window, Gplcart, jQuery);
