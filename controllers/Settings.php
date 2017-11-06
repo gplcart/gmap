@@ -42,7 +42,7 @@ class Settings extends BackendController
         $this->setTitleEditSettings();
         $this->setBreadcrumbEditSettings();
 
-        $this->setData('settings', $this->config->module('gmap'));
+        $this->setData('settings', $this->config->getFromModule('gmap'));
 
         $this->submitSettings();
         $this->outputEditSettings();

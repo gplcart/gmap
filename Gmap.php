@@ -9,7 +9,8 @@
 
 namespace gplcart\modules\gmap;
 
-use gplcart\core\Module;
+use gplcart\core\Module,
+    gplcart\core\Config;
 
 /**
  * Main class for Google Map module
@@ -18,11 +19,11 @@ class Gmap extends Module
 {
 
     /**
-     * Constructor
+     * @param Config $config
      */
-    public function __construct()
+    public function __construct(Config $config)
     {
-        parent::__construct();
+        parent::__construct($config);
     }
 
     /**
@@ -45,7 +46,7 @@ class Gmap extends Module
      */
     public function hookConstructController($controller)
     {
-        $controller->setJsSettings('gmap', array('key' => $this->config->module('gmap', 'key')));
+        $controller->setJsSettings('gmap', array('key' => $this->config->getFromModule('gmap', 'key')));
         $controller->setJs('system/modules/gmap/js/common.js');
     }
 
