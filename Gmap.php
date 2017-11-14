@@ -46,8 +46,19 @@ class Gmap extends Module
      */
     public function hookConstructController($controller)
     {
-        $controller->setJsSettings('gmap', array('key' => $this->config->getFromModule('gmap', 'key')));
-        $controller->setJs('system/modules/gmap/js/common.js');
+        $this->setModuleAssets($controller);
+    }
+
+    /**
+     * Sets module specific assets
+     * @param \gplcart\core\Controller $controller
+     */
+    protected function setModuleAssets($controller)
+    {
+        if (!$controller->isInternalRoute()) {
+            $controller->setJsSettings('gmap', array('key' => $this->config->getFromModule('gmap', 'key')));
+            $controller->setJs('system/modules/gmap/js/common.js');
+        }
     }
 
 }
