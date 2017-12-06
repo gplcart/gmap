@@ -9,21 +9,26 @@
 
 namespace gplcart\modules\gmap;
 
-use gplcart\core\Module,
-    gplcart\core\Config;
+use gplcart\core\Module;
 
 /**
  * Main class for Google Map module
  */
-class Gmap extends Module
+class Gmap
 {
 
     /**
-     * @param Config $config
+     * Module class instance
+     * @var \gplcart\core\Module $module
      */
-    public function __construct(Config $config)
+    protected $module;
+
+    /**
+     * @param Module $module
+     */
+    public function __construct(Module $module)
     {
-        parent::__construct($config);
+        $this->module = $module;
     }
 
     /**
@@ -56,7 +61,7 @@ class Gmap extends Module
     protected function setModuleAssets($controller)
     {
         if (!$controller->isInternalRoute()) {
-            $controller->setJsSettings('gmap', array('key' => $this->config->getFromModule('gmap', 'key')));
+            $controller->setJsSettings('gmap', array('key' => $this->module->getSettings('gmap', 'key')));
             $controller->setJs('system/modules/gmap/js/common.js');
         }
     }
