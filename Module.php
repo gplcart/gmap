@@ -9,12 +9,12 @@
 
 namespace gplcart\modules\gmap;
 
-use gplcart\core\Module;
+use gplcart\core\Module as CoreModule;
 
 /**
  * Main class for Google Map module
  */
-class Gmap
+class Module
 {
 
     /**
@@ -26,7 +26,7 @@ class Gmap
     /**
      * @param Module $module
      */
-    public function __construct(Module $module)
+    public function __construct(CoreModule $module)
     {
         $this->module = $module;
     }
