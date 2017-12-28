@@ -24,7 +24,7 @@ class Module
     protected $module;
 
     /**
-     * @param Module $module
+     * @param CoreModule $module
      */
     public function __construct(CoreModule $module)
     {
