@@ -9,6 +9,7 @@
 
 namespace gplcart\modules\gmap;
 
+use gplcart\core\Controller;
 use gplcart\core\Module;
 
 /**
@@ -49,7 +50,7 @@ class Main
      * Implements hook "construct.controller"
      * @param \gplcart\core\Controller $controller
      */
-    public function hookConstructController($controller)
+    public function hookConstructController(Controller $controller)
     {
         $this->setModuleAssets($controller);
     }
@@ -58,7 +59,7 @@ class Main
      * Sets module specific assets
      * @param \gplcart\core\Controller $controller
      */
-    protected function setModuleAssets($controller)
+    protected function setModuleAssets(Controller $controller)
     {
         if (!$controller->isInternalRoute()) {
             $controller->setJsSettings('gmap', array('key' => $this->module->getSettings('gmap', 'key')));
